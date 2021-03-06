@@ -14,10 +14,18 @@
 */
 
 
+// Array with all DOM section objects
 const sections = document.querySelectorAll('section');
-const section_titles = document.querySelectorAll('h2'); // not elegant, but works for the page
+
+// Array with all DOM section title objects (h2)
+const section_titles = document.querySelectorAll('h2');
 
 const scroll_to_section = function (number) {
+	/**
+	* Result: Scrolls page to the start of the section given by number
+	* Inputs:
+	* 	number: Position of section in array
+	*/
 	section_title = section_titles[number];
 	position = section_title.getBoundingClientRect();
 	window.scrollBy({
@@ -28,13 +36,20 @@ const scroll_to_section = function (number) {
 };
 
 const activate_section = function () {
+	/**
+	* Result: 
+	*	Activates the closest section (approximately) below the current window position.
+	*	It also deactivates the previous active section.
+	*	Activation corresponds to adding class your-active-class to the classList of the section.
+	*/
+
 	let min_distance = document.body.scrollHeight;
 	let active_section = {};
-	// find new active section
+	// Find new active section
 	for (let i = 0; i < sections.length; i++) {
 		section = sections[i];
 		position = section.getBoundingClientRect();
-		// top of the page is not passed the title
+		// Top of the page is not passed the title (with adjustment)
 		if (position.y + 100 > 0) {
 			// lowest distance until now
 			if (position.y < min_distance) {
@@ -43,11 +58,11 @@ const activate_section = function () {
 			}
 		}
 	}
-	// activate section
+	// Activate section
 	if (!active_section.classList.contains("your-active-class")) {
 		active_section.classList.add("your-active-class");
 	}
-	// deactivate other sections
+	// Deactivate other sections
 	for (let i = 0; i < sections.length; i++) {
 		section = sections[i];
 		if (section !== active_section) {
@@ -58,10 +73,12 @@ const activate_section = function () {
 	}
 };
 
+
+// Dynamically build the navigation bar based on the sections on the HTML
 const navbar = document.getElementById("navbar__list")
 for (let i = 0; i < section_titles.length; i++) {
 
-	// build the nav
+	// Build the nav
 	const li = document.createElement("li");
 	section_title_text = section_titles[i].innerText
 	li.appendChild(document.createTextNode(section_title_text));
