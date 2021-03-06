@@ -65,13 +65,25 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    justify-content: flex-start;
+    align-items: center;
     margin: 0;
-    text-align: right;
+    height: 2em;
+    /*text-align: center;*/
+    background-color: rgba(0,13,60);
+    font-family: 'Oxygen', Sans-Serif;
+    border-bottom: 1px solid #cc1;
+    font-size: 1.5em;
 }
 
 .navbar__menu li {
     display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+    /*border: 1px solid #fff;*/
 }
 
 .navbar__menu .menu__link {
@@ -195,7 +207,9 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%);*/
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(34, 49, 63, 0.5), rgba(0, 0, 0, 0));
+    /*#cc1*/
 }
 
 section.your-active-class .landing__container::before {
