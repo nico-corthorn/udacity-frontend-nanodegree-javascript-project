@@ -7,7 +7,7 @@
 * [Code](#code)
 
 
-## Project Description
+## Description
 
 Second project of the Udacity's Front-end Nanodegree program. In this project an HTML and CSS was provided and a JavaScript file had to be coded from scratch.
 
