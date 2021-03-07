@@ -45,6 +45,7 @@ const activate_section = function () {
 
 	let min_distance = document.body.scrollHeight;
 	let active_section = {};
+	let active_section_number = 1;
 	// Find new active section
 	for (let i = 0; i < sections.length; i++) {
 		section = sections[i];
@@ -55,6 +56,7 @@ const activate_section = function () {
 			if (position.y < min_distance) {
 				min_distance = position.y;
 				active_section = section;
+				active_section_number = i;
 			}
 		}
 	}
@@ -71,6 +73,19 @@ const activate_section = function () {
 			}
 		}
 	}
+	// Activate section in nav bar
+	navbar_li_elements = document.getElementById("navbar__list").querySelectorAll('li')
+	navbar_li_elements[active_section_number].classList.add("active-nav-section")
+	// Deactivate section in nav bar
+	for (let i = 0; i < sections.length; i++) {
+		if (i != active_section_number) {
+			if (navbar_li_elements[i].classList.contains("active-nav-section")) {
+				navbar_li_elements[i].classList.remove("active-nav-section");
+			}
+		}
+	}	
+
+
 };
 
 
@@ -87,6 +102,9 @@ for (let i = 0; i < section_titles.length; i++) {
 	// Scroll to section on link click
 	li.addEventListener('click',  () => {scroll_to_section(i)});
 }
+
+// Have section 1 activated at inception
+activate_section();
 
 
 // Add class 'active' to section when near top of viewport

@@ -2,12 +2,28 @@
 
 ## Table of Contents
 
+* [Project Description](#projectdescription)
 * [Instructions](#instructions)
 * [Code](#code)
 
+
+## Project Description
+
+Second project of the Udacity's Front-end Nanodegree program. In this project an HTML and CSS was provided and a JavaScript file had to be coded from scratch.
+
+The JavaScript file adds some common interactions used in a webpage. This includes:
+- Building the navigation bar automatically based on the HTML content.
+- Activating sections based on the scroll position.
+- Scrolling to a section when clicked in the navigation bar.
+
+The main concepts tested in this project are:
+- Quering elements in the DOM.
+- Manipulating those elements (e.g. adding elements or changing CSS class list of an element)
+- Using event listeners for triggering JavaScript code upon user actions.
+
 ## Instructions
 
-To see the page open file index.html in your browser (double click on the file).
+Download the repo and then double click on index.html to see the page in your browser.
 
 ## Code
 

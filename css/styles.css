@@ -67,12 +67,10 @@ section {
 .navbar__menu ul {
     display: flex;
     flex-direction: row;
-    /*flex-wrap: wrap;*/
     justify-content: flex-start;
     align-items: center;
     margin: 0;
     height: 2em;
-    /*text-align: center;*/
     background-color: rgba(0,13,60);
     font-family: 'Oxygen', Sans-Serif;
     border-bottom: 1px solid #cc1;
@@ -83,7 +81,6 @@ section {
     display: inline-block;
     margin: 20px;
     cursor: pointer;
-    /*border: 1px solid #fff;*/
 }
 
 .navbar__menu .menu__link {
@@ -220,6 +217,12 @@ section.your-active-class .landing__container::before {
 section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+
+li.active-nav-section {
+  /*font-weight: bold;*/
+  color: #cc1;
 }
 
 /* Section Active Styles Keyframe Animations */
