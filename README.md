@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Project Description](#project%20description)
+* [Description](#description)
 * [Instructions](#instructions)
 * [Code](#code)
 
